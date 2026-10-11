@@ -1,0 +1,46 @@
+# secrets and local settings (.env.example is the only one committed)
+.env
+.env.*
+!.env.example
+secrets/
+*.cred.xml
+
+# VM disks, media and images
+*.vhdx
+*.vhd
+*.avhdx
+*.avhd
+*.vmcx
+*.vmrs
+*.vmgs
+*.iso
+*.img
+*.qcow2
+*.wim
+*.esd
+
+# outputs and recordings
+out/
+recordings/
+*.mkv
+*.mp4
+*.markers.json
+
+# Python and build artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# test and tool output
+TestResults/
+*.log

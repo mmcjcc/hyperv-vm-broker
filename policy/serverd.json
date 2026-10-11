@@ -1,0 +1,42 @@
+{
+  "policy": 1,
+  "stage": "v0.R",
+  "host": "serverd",
+  "budget_gb": 3,
+  "floor_gb": 3,
+  "firewall_vm": "Firewall3",
+  "firewall_mode": "elsewhere",
+  "lan_switch": "LAN2",
+  "cpu": {"weight": 50, "limit": 75},
+  "disk_iops_max": 800,
+  "memory_priority": 20,
+  "copy_window": {"always": true, "start": "01:00", "end": "06:00"},
+  "copy_mbps": 10,
+  "time_zone": "Eastern Standard Time",
+  "update_rounds": 5,
+  "frozen": false,
+  "profiles": {
+    "win11-lab": {
+      "lab_os": "win2025",
+      "edition": "standard",
+      "iso": "D:\\ISO\\en-us_windows_server_2025_updated_sep_2026_x64_dvd_f69d8ae5.iso",
+      "image_name": "Windows Server 2025 SERVERSTANDARD",
+      "memory_max_gb": 8,
+      "memory": {"startup_mb": 1024, "minimum_mb": 1024, "maximum_mb": 3072},
+      "on_lan": true,
+      "max_vms": 1
+    }
+  },
+  "recording_vm": {
+    "name": "lab-p1",
+    "consumer": "cs101-walkthroughs",
+    "approved": ["activation", "keep", "lan"],
+    "approved_by": "The operator",
+    "approved_on": "2026-10-10"
+  },
+  "decisions": [
+    "2026-10-10 the operator: build the recording VM on serverd, not servera (servera is to be rebuilt soon)",
+    "2026-10-10 the operator: a smaller amount of RAM for the initial build is fine (memory above); no copy window, do it now",
+    "firewall_mode elsewhere: serverd holds Firewall3's replica; no broker VM starts here while Firewall3 runs here"
+  ]
+}

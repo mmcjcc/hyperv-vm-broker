@@ -1,0 +1,8 @@
+# LF everywhere: cloud-init user-data, shell scripts and request YAML break with CR.
+* text=auto eol=lf
+# Windows-only scripts keep CRLF.
+*.ps1 text eol=crlf
+*.psm1 text eol=crlf
+*.psd1 text eol=crlf
+*.cmd text eol=crlf
+*.bat text eol=crlf

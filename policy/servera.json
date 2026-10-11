@@ -1,0 +1,36 @@
+{
+  "policy": 1,
+  "stage": "v0.R",
+  "host": "servera",
+  "budget_gb": 10,
+  "floor_gb": 3,
+  "firewall_vm": "Firewall3",
+  "firewall_mode": "here",
+  "lan_switch": "LAN2",
+  "cpu": {"weight": 50, "limit": 75},
+  "disk_iops_max": 800,
+  "memory_priority": 20,
+  "copy_window": {"start": "01:00", "end": "06:00"},
+  "copy_mbps": 10,
+  "time_zone": "Eastern Standard Time",
+  "update_rounds": 5,
+  "frozen": false,
+  "profiles": {
+    "win11-lab": {
+      "lab_os": "win2025",
+      "edition": "standard",
+      "iso": "C:\\VMs\\iso\\en-us_windows_server_2025_updated_sep_2026_x64_dvd_f69d8ae5.iso",
+      "image_name": "Windows Server 2025 SERVERSTANDARD",
+      "memory_max_gb": 8,
+      "on_lan": true,
+      "max_vms": 1
+    }
+  },
+  "recording_vm": {
+    "name": "lab-p1",
+    "consumer": "cs101-walkthroughs",
+    "approved": ["activation", "keep", "lan"],
+    "approved_by": "The operator",
+    "approved_on": "2026-10-10"
+  }
+}

@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vm-broker"
+version = "0.1.0"
+description = "Hands out Hyper-V VMs to Claude Code sessions by profile, inside limits the operator sets."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["PyYAML>=6.0"]
+
+[project.scripts]
+vmb = "vm_broker.cli:main"
+vmb-admin = "vm_broker.admin:main"
+vmb-hostctl = "vm_broker.hostctl:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+vm_broker = ["backend/ps/*.ps1", "backend/ps/*.md"]

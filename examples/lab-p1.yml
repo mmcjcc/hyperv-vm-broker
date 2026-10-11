@@ -1,0 +1,12 @@
+contract: 1
+name: lab-p1
+profile: win11-lab
+host: serverd
+size: {cpu: 4, memory: 4g, disk: 80g}
+network: {mode: lan}
+access: []
+director: true
+checkpoints: standard
+activation: mak
+lease: {keep: true}
+purpose: "CS 101 walkthrough recordings: the v0.R recording VM (Server 2025 Desktop Experience)"
